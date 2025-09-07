@@ -1,8 +1,15 @@
 diff --git a/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts b/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
-index e2bb6bc16c13..02c0ae9c487d 100644
+index e2bb6bc16c13..fc84c04f334c 100644
 --- a/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
 +++ b/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
-@@ -22,6 +22,13 @@ chosen {
+@@ -16,12 +16,20 @@ / {
+ 	aliases {
+ 		ethernet0 = &rtl8723ds;
+ 		serial0 = &uart0;
++		serial4 = &uart4;
+ 	};
+ 
+ 	chosen {
  		stdout-path = "serial0:115200n8";
  	};
  
@@ -16,3 +23,28 @@ index e2bb6bc16c13..02c0ae9c487d 100644
  	leds {
  		compatible = "gpio-leds";
  
+@@ -109,6 +117,11 @@ &ohci1 {
+ 
+ &pio {
+ 	vcc-pe-supply = <&reg_avdd2v8>;
++
++	uart4_pb2_pins: uart4-pb2-pins {
++		pins = "PB2", "PB3";
++		function = "uart4";
++    };
+ };
+ 
+ &uart0 {
+@@ -131,6 +144,12 @@ bluetooth {
+ 	};
+ };
+ 
++&uart4 {
++	pinctrl-0 = <&uart4_pb2_pins>;
++	pinctrl-names = "default";
++	status = "okay";
++};
++
+ &usb_otg {
+ 	dr_mode = "peripheral";
+ 	status = "okay";
