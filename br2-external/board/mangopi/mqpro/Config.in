@@ -1,0 +1,7 @@
+config BR2_TARGET_UBOOT_CUSTOM
+    bool "Use custom U-Boot config"
+    default y
+
+config BR2_LINUX_KERNEL_CUSTOM
+    bool "Use custom kernel config"
+    default y

@@ -1,0 +1,10 @@
+#!/bin/bash
+BASE_DIR=`pwd`
+
+if [ ! -e buildroot/Makefile ]; then
+	echo "Please make sure you've checked out the buildroot submodule"
+	echo "  git submodule init && git submodule update"
+	return -1
+fi
+
+export BR2_EXTERNAL=${BASE_DIR}/br2-external

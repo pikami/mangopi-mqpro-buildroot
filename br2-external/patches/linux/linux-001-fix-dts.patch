@@ -1,0 +1,18 @@
+diff --git a/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts b/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
+index e2bb6bc16c13..02c0ae9c487d 100644
+--- a/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
++++ b/arch/riscv/boot/dts/allwinner/sun20i-d1-mangopi-mq-pro.dts
+@@ -22,6 +22,13 @@ chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
+ 
++	/* Kernel panic otherwise */
++	/* OF: reserved mem: Failed to allocate memory for reserved_mem array with err: -12 */
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x40000000 0x20000000>; /* start 0x40000000, size 512MB */
++	};
++
+ 	leds {
+ 		compatible = "gpio-leds";
+ 

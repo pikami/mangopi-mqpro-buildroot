@@ -1,0 +1,2 @@
+# top-level Config.in for br2-external
+source "$BR2_EXTERNAL_MANGOPI_MQPRO_PATH/package/custom-rtl8723ds/Config.in"

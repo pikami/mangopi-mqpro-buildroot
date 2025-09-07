@@ -1,0 +1,8 @@
+config BR2_PACKAGE_CUSTOM_RTL8723DS
+    bool "RTL8723DS Wi-Fi Driver"
+    depends on BR2_LINUX_KERNEL
+    help
+      Build and install the RTL8723DS Wi-Fi kernel module
+
+comment "rtl8723ds needs a Linux kernel to be built"
+    depends on !BR2_LINUX_KERNEL

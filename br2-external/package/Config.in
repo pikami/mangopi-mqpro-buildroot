@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_MANGOPI_MQPRO_PATH/package/custom-rtl8723ds/Config.in"
